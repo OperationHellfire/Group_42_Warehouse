@@ -187,8 +187,7 @@ namespace G42Warehouse.Domain
 
                 string typeName = parts[0];
                 string name = parts[1];
-
-                // --- SAFE parsedRow FIX ---
+                
                 var locationParts = parts[2].Split('-');
 
                 string building = locationParts.Length > 0 ? locationParts[0] : "UNKNOWN";
@@ -199,7 +198,6 @@ namespace G42Warehouse.Domain
                     int.TryParse(locationParts[2], out parsedRow);
 
                 var location = new SectionLocation(building, aisle, parsedRow);
-                // --- END FIX ---
 
                 double width = double.Parse(parts[3], CultureInfo.InvariantCulture);
                 double length = double.Parse(parts[4], CultureInfo.InvariantCulture);
