@@ -1,5 +1,3 @@
-using System;
-using System.IO;
 using G42Warehouse.Domain;
 using Xunit;
 
