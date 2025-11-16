@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
-using System.Linq;
 
 namespace G42Warehouse.Domain
 {
@@ -303,3 +299,4 @@ namespace G42Warehouse.Domain
         }
     }
 }
+
