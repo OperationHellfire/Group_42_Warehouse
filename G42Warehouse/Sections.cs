@@ -2,6 +2,22 @@ using System.Globalization;
 
 namespace G42Warehouse.Domain
 {
+    public enum SectionStatus
+    {
+        Active,
+        Maintenance,
+        Closed
+    }
+
+    public enum HazardType
+    {
+        Toxic,
+        Flammable,
+        Corrosive,
+        Irritant,
+        Sensitizer,
+        Asphyxiant
+    }
     public sealed class SectionLocation
     {
         public string Building { get; }
@@ -299,4 +315,3 @@ namespace G42Warehouse.Domain
         }
     }
 }
-
