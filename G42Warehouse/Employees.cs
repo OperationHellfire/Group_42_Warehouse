@@ -198,27 +198,21 @@ namespace G42Warehouse.Domain
 
     public sealed class DeliveryDriver : Worker
     {
-        private string? _driverLicenseCategory;
-        public string? DriverLicenseCategory
+        private string _driverLicenseCategory;
+
+        public string DriverLicenseCategory
         {
             get => _driverLicenseCategory;
             set
             {
-                if (value != null && string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("License category cannot be empty when provided.", nameof(value));
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("License category cannot be empty.", nameof(value));
 
-                if (value != null)
-                {
-                    var trimmed = value.Trim().ToUpperInvariant();
-                    if (trimmed != "B" && trimmed != "C" && trimmed != "C1")
-                        throw new ArgumentException("Driver license must be one of: B, C, C1.", nameof(value));
+                var trimmed = value.Trim().ToUpperInvariant();
+                if (trimmed != "B" && trimmed != "C" && trimmed != "C1")
+                    throw new ArgumentException("Driver license must be one of: B, C, C1.", nameof(value));
 
-                    _driverLicenseCategory = trimmed;
-                }
-                else
-                {
-                    _driverLicenseCategory = null;
-                }
+                _driverLicenseCategory = trimmed;
             }
         }
 
@@ -227,7 +221,7 @@ namespace G42Warehouse.Domain
             DateTime employmentDate,
             decimal baseSalary,
             ExperienceLevel experienceLevel,
-            string? driverLicenseCategory)
+            string driverLicenseCategory)
             : base(name, employmentDate, baseSalary, experienceLevel)
         {
             DriverLicenseCategory = driverLicenseCategory;
@@ -242,4 +236,5 @@ namespace G42Warehouse.Domain
         }
     }
 }
+
 
