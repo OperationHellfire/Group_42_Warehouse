@@ -143,7 +143,7 @@ namespace G42Warehouse.Domain
                     nameof(WarehouseManager) =>
                         new WarehouseManager(name, employmentDate, baseSalary, experienceLevel),
                     nameof(DeliveryDriver) =>
-                        new DeliveryDriver(name, employmentDate, baseSalary, experienceLevel, null),
+                        new DeliveryDriver(name, employmentDate, baseSalary, experienceLevel, "B"),
                     nameof(MachineOperator) =>
                         new MachineOperator(name, employmentDate, baseSalary, experienceLevel),
                     nameof(GeneralEmployee) =>
@@ -236,5 +236,6 @@ namespace G42Warehouse.Domain
         }
     }
 }
+
 
 
