@@ -2,14 +2,12 @@ using System.Globalization;
 
 namespace G42Warehouse.Domain
 {
-    // <<< TAŞINAN ENUM >>>
     public enum ExperienceLevel
     {
         Junior = 1,
         Mid = 2,
         Senior = 3
     }
-    // <<< ENUM BİTİŞ >>>
 
     public abstract class Employee
     {
@@ -244,3 +242,4 @@ namespace G42Warehouse.Domain
         }
     }
 }
+
